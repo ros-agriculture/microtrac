@@ -3,6 +3,6 @@ Software for Open Source Ecology's Micro Tractor http://opensourceecology.org/wi
 
 
 
-[![MicroTractor](https://img.youtube.com/vi/YdGp4zrRpEs8/0.jpg)](https://www.youtube.com/watch?v=dGp4zrRpEs8)
+[![MicroTractor](http://rosagriculture.org/images/OSEMicroTractor.png)](https://www.youtube.com/watch?v=dGp4zrRpEs8)
 
 
