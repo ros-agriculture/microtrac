@@ -10,7 +10,10 @@
   <license>MIT</license>
   <buildtool_depend>catkin</buildtool_depend>
 
+  <run_depend>microtractor_base</run_depend>
+  <run_depend>microtractor_control</run_depend>
   <run_depend>microtractor_description</run_depend>
+  <run_depend>microtractor_navigation</run_depend>
   
   <export>
     <metapackage/>

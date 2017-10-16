@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package>
+  <name>microtractor_base</name>
+  <version>0.0.0</version>
+  <description>The microtractor base package</description>
+
+  <maintainer email="matt@rosagriculture.org">Matt Droter</maintainer>
+
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
