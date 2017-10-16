@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<launch>
+ <!-- Load the URDF into the ROS Parameter Server -->
+ <!-- param name="robot_description" command="cat '$(find microtractor_description)urdf/microtractor.urdf'" / -->
+  <param name="robot_description"
+   command="$(find xacro)/xacro --inorder $(find microtractor_description)/urdf/microtractor.urdf.xacro"/>
+
+ <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen" args="_use_gui:=true"/>
+
+ <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_world" args="0 0 0 0 0 0 1 odom base_link" />
+
+ <node name="robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher" output="screen"/>
+
+ <node name="rviz" pkg="rviz" type="rviz" args="-d $(find microtractor_description)config/microtractor.rviz" required="true"/>
+
+
+  <!-- FIXME Stuff for Gazebo (move once a microtractor_gazebo package is constructed -->
+  <arg name="gazebo" default="false"/>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <include if="$(arg gazebo)" file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!-- arg name="world_name" value="$(find microtractor_gazebo)/worlds/microtractor.world"/ -->
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+   <node if="$(arg gazebo)" name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-param robot_description -urdf -z 0.5 -model microtractor" />
+
+</launch>
+
