@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<robot name="microtractor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="gazebo" default="false"/>
+  <!-- xacro:if value="$(arg gazebo)" -->
+    <!-- Gazebo Tags -->
+    <!-- xacro:include filename="$(find microtractor_description)/urdf/microtractor_base.gazebo.xacro" / -->
+    <!-- Base link is the topside of the center of the fourth hole from in back in the center beam -->
+    <link name="base_link"/>
+    <link name="frame_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://microtractor_description/meshes/tractor_frame.dae" />
+        </geometry>
+      </visual>
+    </link>
+    <joint name="base_frame_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="frame_link"/>
+    </joint>
+
+    <!-- Right Drivetrain -->
+    <link name="r_drivetrain_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://microtractor_description/meshes/right_drivetrain.dae" />
+        </geometry>
+      </visual>
+    </link>
+    <joint name="r_drivetrain_joint" type="fixed">
+        <origin xyz="-0.1526 -0.2542 -0.1523" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="r_drivetrain_link"/>
+    </joint>
+    <link name="r_rear_wheel_link">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 ${pi/2} ${pi/2}" />
+        <geometry>
+          <cylinder length="0.24" radius="0.182"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="r_rear_wheel_joint" type="continuous">
+        <origin xyz="0 -0.17 0" rpy="0 0 0" />
+        <parent link="r_drivetrain_link"/>
+        <child link="r_rear_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="r_front_wheel_link">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 ${pi/2} ${pi/2}" />
+        <geometry>
+          <cylinder length="0.24" radius="0.182"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="r_front_wheel_joint" type="continuous">
+        <origin xyz="1.015 -0.17 0" rpy="0 0 0" />
+        <parent link="r_drivetrain_link"/>
+        <child link="r_front_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <!-- Left Drivetrain -->
+    <link name="l_drivetrain_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://microtractor_description/meshes/left_drivetrain.dae" />
+        </geometry>
+      </visual>
+    </link>
+    <joint name="l_drivetrain_joint" type="fixed">
+        <origin xyz="-0.1526 0.2542 -0.1523" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="l_drivetrain_link"/>
+    </joint>
+
+    <link name="l_rear_wheel_link">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 ${pi/2} ${pi/2}" />
+        <geometry>
+          <cylinder length="0.24" radius="0.182"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="l_rear_wheel_joint" type="continuous">
+        <origin xyz="0 0.17 0" rpy="0 0 0" />
+        <parent link="l_drivetrain_link"/>
+        <child link="l_rear_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="l_front_wheel_link">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 ${pi/2} ${pi/2}" />
+        <geometry>
+          <cylinder length="0.24" radius="0.182"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="l_front_wheel_joint" type="continuous">
+        <origin xyz="1.015 0.17 0" rpy="0 0 0" />
+        <parent link="l_drivetrain_link"/>
+        <child link="l_front_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="powercube_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://microtractor_description/meshes/powercube.dae" />
+        </geometry>
+      </visual>
+    </link>
+    <joint name="powercube_joint" type="fixed">
+        <origin xyz="0.07 0 0" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="powercube_link"/>
+    </joint>
+</robot>

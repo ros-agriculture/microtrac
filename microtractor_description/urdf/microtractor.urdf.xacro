@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<robot name="microtractor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="gazebo" default="false"/>
+  <!-- Microtractor Base URDF -->
+  <xacro:include filename="$(find microtractor_description)/urdf/microtractor_base.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+  </xacro:include>
+  <!-- xacro:include filename="$(find microtractor_description)/urdf/microtractor_loader.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+  </xacro:include>
+  <xacro:include filename="$(find microtractor_description)/urdf/microtractor_drivetrain.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+    <xacro:arg name="reflect" value="1"/>
+  </xacro:include>
+  <xacro:include filename="$(find microtractor_description)/urdf/microtractor_drivetrain.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+    <xacro:arg name="reflect" value="-1"/>
+  </xacro:include -->
+
+</robot>
