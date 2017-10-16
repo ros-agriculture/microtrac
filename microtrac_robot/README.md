@@ -1,7 +1,7 @@
-# microtractor_robot
-Meta-package for Microtractor ROS packages:
+# microtrac_robot
+Meta-package for MicroTrac ROS packages:
 
-    microtractor_base
-    microtractor_control
-    microtractor_description
-    microtractor_navigation
+    microtrac_base
+    microtrac_control
+    microtrac_description
+    microtrac_navigation

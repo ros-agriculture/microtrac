@@ -1,3 +1,3 @@
-# microtractor_base
-Placeholder package for driver and microcontroller integration
+# microtrac_base
+Placeholder package for microcontroller integration, drivers, and sensor data code
 

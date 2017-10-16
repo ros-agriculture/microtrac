@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(microtractor_description)
+project(microtrac_description)
 
 find_package(catkin REQUIRED)
 catkin_package()
@@ -35,7 +35,7 @@ catkin_package()
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_microtractor_description.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_microtrac_description.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

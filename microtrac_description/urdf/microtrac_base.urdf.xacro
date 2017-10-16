@@ -1,16 +1,16 @@
 <?xml version="1.0" ?>
-<robot name="microtractor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="microtrac" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:arg name="gazebo" default="false"/>
   <!-- xacro:if value="$(arg gazebo)" -->
     <!-- Gazebo Tags -->
-    <!-- xacro:include filename="$(find microtractor_description)/urdf/microtractor_base.gazebo.xacro" / -->
+    <!-- xacro:include filename="$(find microtrac_description)/urdf/microtrac_base.gazebo.xacro" / -->
     <!-- Base link is the topside of the center of the fourth hole from in back in the center beam -->
     <link name="base_link"/>
     <link name="frame_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://microtractor_description/meshes/tractor_frame.dae" />
+          <mesh filename="package://microtrac_description/meshes/tractor_frame.dae" />
         </geometry>
       </visual>
     </link>
@@ -25,7 +25,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://microtractor_description/meshes/right_drivetrain.dae" />
+          <mesh filename="package://microtrac_description/meshes/right_drivetrain.dae" />
         </geometry>
       </visual>
     </link>
@@ -69,7 +69,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://microtractor_description/meshes/left_drivetrain.dae" />
+          <mesh filename="package://microtrac_description/meshes/left_drivetrain.dae" />
         </geometry>
       </visual>
     </link>
@@ -113,7 +113,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://microtractor_description/meshes/powercube.dae" />
+          <mesh filename="package://microtrac_description/meshes/powercube.dae" />
         </geometry>
       </visual>
     </link>

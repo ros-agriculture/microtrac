@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>microtractor_base</name>
+  <name>microtrac_base</name>
   <version>0.0.0</version>
-  <description>The microtractor base package</description>
+  <description>The microtrac base package</description>
 
   <maintainer email="matt@rosagriculture.org">Matt Droter</maintainer>
 
