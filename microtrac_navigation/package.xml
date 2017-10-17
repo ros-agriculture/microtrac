@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>microtractor_control</name>
+  <name>microtrac_navigation</name>
   <version>0.0.0</version>
-  <description>The microtractor control package</description>
+  <description>The microtrac navigation package</description>
 
   <maintainer email="matt@rosagriculture.org">Matt Droter</maintainer>
 

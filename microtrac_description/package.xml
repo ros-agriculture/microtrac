@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>microtractor_description</name>
+  <name>microtrac_description</name>
   <version>0.0.0</version>
-  <description>The microtractor_description package</description>
+  <description>The microtrac_description package</description>
 
   <maintainer email="matt@rosagriculture.org">Matt Droter</maintainer>
   <author email="ian@ianthe.engineer">Ian McMahon</author>
